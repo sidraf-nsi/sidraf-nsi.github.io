@@ -1,10 +1,61 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=html/index.html">
-    <title>Redirection</title>
-  </head>
-  <body>
-    <p>Redirection automatique vers <a href="html/template.html">html/template.html</a></p>
-  </body>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="2; url=html/index.html">
+  <title>Redirection en cours...</title>
+  <style>
+    body {
+      background: #f4f4f4;
+      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1em;
+    }
+
+    .loader {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #3498db;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin-top: 20px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Redirection en cours...</h1>
+  <p>Tu seras redirigé vers la page principale dans quelques secondes.<br>
+     Si rien ne se passe, <a href="html/index.html">clique ici</a>.</p>
+  <div class="loader"></div>
+</body>
 </html>
