@@ -2,60 +2,113 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="2; url=html/index.html">
+  <meta http-equiv="refresh" content="2; url=html/presentation.html">
   <title>Redirection en cours...</title>
   <style>
+    :root {
+      --green: #00896C;
+      --yellow: #FFD700;
+      --red: #C0392B;
+      --beige: #F5E6C4;
+      --dark: #0E2C32;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      background: #f4f4f4;
-      color: #333;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--dark);
+      color: var(--beige);
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
+      align-items: center;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      max-width: 600px;
+      width: 100%;
     }
 
     h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
+      color: var(--yellow);
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
     }
 
     p {
-      font-size: 1.1em;
-    }
-
-    .loader {
-      border: 6px solid #f3f3f3;
-      border-top: 6px solid #3498db;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      animation: spin 1s linear infinite;
-      margin-top: 20px;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      font-size: 1.1rem;
+      color: var(--beige);
     }
 
     a {
-      color: #3498db;
+      color: var(--yellow);
       text-decoration: none;
       font-weight: bold;
     }
 
     a:hover {
       text-decoration: underline;
+      color: var(--green);
+    }
+
+    .loader {
+      margin: 30px auto 0;
+      width: 50px;
+      height: 50px;
+      border: 6px solid var(--green);
+      border-top: 6px solid var(--yellow);
+      border-right: 6px solid var(--red);
+      border-radius: 50%;
+      animation: spin 1s linear infinite, colorShift 3s infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes colorShift {
+      0% {
+        border-color: var(--green);
+        border-top-color: var(--yellow);
+        border-right-color: var(--red);
+      }
+      33% {
+        border-color: var(--yellow);
+        border-top-color: var(--red);
+        border-right-color: var(--green);
+      }
+      66% {
+        border-color: var(--red);
+        border-top-color: var(--green);
+        border-right-color: var(--yellow);
+      }
+      100% {
+        border-color: var(--green);
+        border-top-color: var(--yellow);
+        border-right-color: var(--red);
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Redirection en cours...</h1>
-  <p>Tu seras redirigé vers la page principale dans quelques secondes.<br>
-     Si rien ne se passe, <a href="html/index.html">clique ici</a>.</p>
-  <div class="loader"></div>
+  <div class="container">
+    <h1>Redirection en cours...</h1>
+    <p>Tu vas être redirigé vers la page principale.<br>
+    Si la redirection ne fonctionne pas, <a href="html/index.html">clique ici</a>.</p>
+    <div class="loader"></div>
+  </div>
 </body>
 </html>
