@@ -1,0 +1,112 @@
+/*Variables que l'on pourra utiliser plus tard*/
+:root {
+  --green: #00896C;
+  --yellow: #FFD700;
+  --red: #C0392B;
+  --beige: #F5E6C4;
+  --dark: #0E2C32;
+}
+
+/*Réinitialisation de tout pour ne pas avoir de problèmes avec les margin et les paddings*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--dark);
+  color: var(--beige);
+  /*Permettre de garder le footer en bas de la page*/
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+header {
+  background-color: var(--dark);
+  padding: 20px;
+  border-bottom: 3px solid var(--green);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenu-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  height: 80px;
+}
+
+.titre {
+  font-size: 3.5rem;
+  color: var(--yellow);
+  letter-spacing: 4px;
+}
+
+/* NAVIGATION */
+nav {
+  background-color: var(--green);
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  gap: 40px;/* Apporte de l'Espace entre les liens */
+}
+
+nav a {
+  text-decoration: none; /* Enlève le soulignement par défaut des liens */
+  color: var(--beige);
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background-color 0.3s, transform 0.2s; /* Ajout d'une transition lorsque l'on survole les liens */
+}
+
+/* Effet lorsque l'on survole les liens de la table des matières */
+nav a:hover {
+  background-color: var(--yellow);
+  color: var(--dark);
+  transform: scale(1.05);
+}
+
+/* MAIN */
+main {
+    flex: 1; /* Prend tout l'espace restant pour garder le footer en bas */
+    padding: 60px 40px;
+    background-color: rgba(245, 230, 196, 0.05); /* Léger fond beige transparent */
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 1.6; /* Améliore la lisibilité du texte */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+/* Encadre le contenu principal de façon jolie comme dans un site professionel */
+main .container {
+background-color: rgba(255, 255, 255, 0.05);
+border: 1px solid rgba(255, 255, 255, 0.1);
+padding: 40px;
+border-radius: 12px;
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+max-width: 1000px;
+width: 100%;
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--red);
+  color: var(--beige);
+  padding: 15px 30px;
+  font-weight: 500; /* Met le texte en gras */
+  font-size: 0.95rem;
+}
